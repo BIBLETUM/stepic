@@ -12,13 +12,14 @@ public class main {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                int guess;
-                do {
+                int guess = 0;
+                while (!isCorrect) {
                     guess = rand.nextInt(1000000000);
-                } while (guess != number);
-                isCorrect = true;
-                System.out.println(number);
+                    if (guess == number)
+                        isCorrect = true;
+                }
                 System.out.println(guess);
+                System.out.println(number);
             }
         });
         thread.start();
