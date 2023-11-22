@@ -1,3 +1,5 @@
+package OOP;
+
 public class Dog {
     String name;
     String breed;
